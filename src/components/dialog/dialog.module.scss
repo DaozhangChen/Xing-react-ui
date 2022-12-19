@@ -1,3 +1,8 @@
 .disable{
   display: none;
 }
+.xing-ui-dialog{
+  &-mask{
+    background: fade-out(black,0.5);
+  }
+}
