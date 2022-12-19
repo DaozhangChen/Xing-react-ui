@@ -1,8 +1,52 @@
 .disable{
   display: none;
 }
-.xing-ui-dialog{
-  &-mask{
-    background: fade-out(black,0.5);
+.xing_ui_dialog{
+  &_wrapper{
+    position: absolute;
+    top: 0;
+  }
+  &_mask{
+    background: rgba(0,0,0,0.5);
+    width: 100vw;
+    height: 100vh;
+  }
+  &_main{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 520px;
+    padding: 20px 24px;
+    background: #fff;
+    border-radius: 8px;
+  }
+  &_title{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+  &_button{
+    text-align: end;
+    margin-top: 12px;
+    &_ok{
+      margin-inline-start: 8px;
+      background-color:#1677ff ;
+      font-size: 14px;
+      height: 32px;
+      padding: 4px 15px;
+      border-radius: 6px;
+      color: #ffffff;
+    }
+    &_cancel{
+      margin-inline-start: 8px;
+      background-color:#ffffff;
+      border: 1px solid #d9d9d9;
+      font-size: 14px;
+      height: 32px;
+      padding: 4px 15px;
+      border-radius: 6px;
+    }
   }
 }
