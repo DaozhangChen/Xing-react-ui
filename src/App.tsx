@@ -1,11 +1,7 @@
-import s from './App.module.scss'
-import Test from "./homepage/test";
+import MainPage from "./homepage/mainPage";
 const App = () => {
     return (<>
-        <div className={s.title}>hello</div>
-        <Test name='menu'/>
-            <Test name='photo'/>
-            <Test name='play'/>
+            <MainPage/>
         </>
     )
 }

@@ -9,7 +9,6 @@ type SvgImport = {
 }
 const Test = (props: Prop) => {
     const modules: SvgImport = import.meta.glob('../assets/icons/*.svg', { eager: true })
-    console.log(modules)
     const path: string = `../assets/icons/${props.name}.svg`
     const All = modules[path].default
     return (
