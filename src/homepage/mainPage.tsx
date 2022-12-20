@@ -39,8 +39,12 @@ const mainPage = ()=>{
             <h2>示例2</h2>
             <button onClick={()=>dialog.info({
                 titleText:'示例2',
-                onClose:()=>{console.log('3211')}
+                onClose:()=>{console.log('3211')},
+                okClick:()=>{console.log('ok')},
+                cancelText:'取个😳',
+                children:[<div>你好啊</div>,<div>我很好</div>]
             })}>info</button>
+            <button onClick={()=>dialog.alert({titleText:'alert',message:'这是一个message'})}>alert</button>
         </>
     )
 }

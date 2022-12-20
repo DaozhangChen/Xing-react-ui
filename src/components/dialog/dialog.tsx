@@ -8,7 +8,7 @@ import Icon from "../icon/icon";
 import ReactDOM from "react-dom/client";
 interface Prop{
     visible:boolean
-    maskOnClick?:MouseEventHandler<HTMLDivElement>
+    maskOnClick?:MouseEventHandler
     titleText?:string
     children?:ReactNode
     cancelClick?:MouseEventHandler
@@ -18,9 +18,22 @@ interface Prop{
     customFooter?:ReactNode[]
     onClose?:MouseEventHandler
 }
-interface easyProp{
+interface infoProp{
     titleText?:string
     onClose?:()=>void
+    cancelClick?:()=>void
+    okClick?:()=>void
+    cancelText?:string
+    okText?:string
+    children?:ReactNode
+    maskOnClick?:()=>void
+}
+interface alertProp{
+    titleText?:string,
+    message?:string
+    onClose?:()=>void
+    maskOnClick?:()=>void
+
 }
 
 
@@ -52,16 +65,29 @@ const Dialog=(props:Prop)=>{
 }
 
 const dialog={
-    info:(arg:easyProp)=>{
+    info:(arg:infoProp)=>{
         const container=<Dialog visible={true}
                                 titleText={arg.titleText}
-                                onClose={()=>{
-                                    if (arg.onClose){
-                                    arg.onClose()
-                                 }
-                                    reactDiv.unmount()
-                                }
-        } okClick={()=>setInterval(()=>{console.log('1111')},1000)}/>
+                                onClose={()=>{arg.onClose?.();reactDiv.unmount()}}
+                                okClick={()=>{arg.okClick?.();reactDiv.unmount()}}
+                                cancelClick={()=>{arg.cancelClick?.();reactDiv.unmount()}}
+                                okText={arg.okText}
+                                cancelText={arg.cancelText}
+                                maskOnClick={()=>{arg.maskOnClick?.();reactDiv.unmount()}}
+        >
+            {arg.children}
+        </Dialog>
+        const div = document.createElement('div')
+        const reactDiv = ReactDOM.createRoot(div)
+        reactDiv.render(container)
+    },
+    alert:(arg:alertProp)=>{
+        const container=<Dialog visible={true}
+                                children={[<p>{arg.message}</p>]}
+                                customFooter={[]}
+                                onClose={()=>{arg.onClose?.();reactDiv.unmount()}}
+                                maskOnClick={()=>{arg.maskOnClick?.();reactDiv.unmount()}}
+        />
         const div = document.createElement('div')
         const reactDiv = ReactDOM.createRoot(div)
         reactDiv.render(container)
