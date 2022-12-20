@@ -18,6 +18,8 @@ const mainPage = ()=>{
                 <Icon name='menu' className={s.icon} component={Shop}/>
             </div>
             <div>Dialog组件</div>
+            <h2>示例1</h2>
+            <button onClick={onClick}>控制开关1</button>
             <div>
                 <Dialog visible={visible}
                         maskOnClick={()=>setVisible(false)}
@@ -33,7 +35,8 @@ const mainPage = ()=>{
                     <Icon name="shop" className={s.icon}/>
                 </Dialog>
             </div>
-            <button onClick={onClick}>控制开关</button>
+            <h2>示例2</h2>
+
         </>
     )
 }
