@@ -1,7 +1,7 @@
 import Icon from "../components/icon/icon";
 import Shop from "@assets/icons/shop.svg";
 import s from './mainPage.module.scss'
-import Dialog from "../components/dialog/dialog";
+import {Dialog,dialog} from "../components/dialog/dialog";
 import {useState} from "react";
 
 const mainPage = ()=>{
@@ -36,7 +36,7 @@ const mainPage = ()=>{
                 </Dialog>
             </div>
             <h2>示例2</h2>
-
+            <button onClick={()=>dialog.info()}>info</button>
         </>
     )
 }

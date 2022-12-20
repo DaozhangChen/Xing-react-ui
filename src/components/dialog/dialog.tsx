@@ -3,9 +3,9 @@ import React, {
     MouseEventHandler,
     ReactNode
 } from "react";
-import {createPortal} from "react-dom";
+import {createPortal,render} from "react-dom";
 type Prop={
-    visible?:boolean
+    visible:boolean
     maskOnClick?:MouseEventHandler<HTMLDivElement>
     titleText?:string
     children?:ReactNode
@@ -16,7 +16,7 @@ type Prop={
     customFooter?:ReactNode[]
 }
 const Dialog=(props:Prop)=>{
-    const x = (
+    return createPortal((
         <>{props.visible?
             <div className={s.xing_ui_dialog_wrapper}>
                 <div className={s.xing_ui_dialog_mask} onClick={props.maskOnClick}/>
@@ -38,7 +38,15 @@ const Dialog=(props:Prop)=>{
             null
         }
         </>
-    )
-    return createPortal(x,document.body)
+    ),document.body)
 }
-export default Dialog
+
+const dialog={
+    info:()=>{
+        const container=<Dialog visible={true}/>
+        const div = document.createElement('div')
+        document.body.append(div)
+        render(container,div)
+    }
+}
+export {Dialog,dialog}
