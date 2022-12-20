@@ -3,6 +3,11 @@ import Shop from "@assets/icons/shop.svg";
 import s from './mainPage.module.scss'
 import {Dialog,dialog} from "../components/dialog/dialog";
 import {useState} from "react";
+import Layout from "../layout/layout";
+import Header from "../layout/header";
+import Content from "../layout/content";
+import Footer from "../layout/footer";
+import Aside from "../layout/aside";
 
 const mainPage = ()=>{
     const [visible,setVisible]=useState<boolean>(false)
@@ -17,6 +22,7 @@ const mainPage = ()=>{
                 <Icon name='play' className={s.icon}/>
                 <Icon name='menu' className={s.icon} component={Shop}/>
             </div>
+            <hr/>
             <div>Dialog组件</div>
             <h2>示例1</h2>
             <button onClick={onClick}>控制开关1</button>
@@ -45,6 +51,42 @@ const mainPage = ()=>{
                 children:[<div>你好啊</div>,<div>我很好</div>]
             })}>info</button>
             <button onClick={()=>dialog.alert({titleText:'alert',message:'这是一个message'})}>alert</button>
+            <hr/>
+            <div>Layout组件</div>
+            <h2>上中下</h2>
+            <Layout style={{height:500}}>
+                <Header>Header</Header>
+                <Content>Content</Content>
+                <Footer>Footer</Footer>
+            </Layout>
+            <h2>顶部侧边布局边栏1</h2>
+            <Layout style={{height:500}}>
+                <Header>Header</Header>
+                <Layout>
+                    <Aside>Aside</Aside>
+                    <Content>Content</Content>
+                </Layout>
+                <Footer>Footer</Footer>
+            </Layout>
+            <h2>顶部侧边布局边栏2</h2>
+            <Layout style={{height:500}}>
+                <Header>Header</Header>
+                <Layout>
+                    <Content>Content</Content>
+                    <Aside>Aside</Aside>
+                </Layout>
+                <Footer>Footer</Footer>
+            </Layout>
+            <h2>侧边顶部布局</h2>
+            <Layout style={{height:500}}>
+                <Aside>Aside</Aside>
+                <Layout>
+                    <Header>Header</Header>
+                    <Content>Content</Content>
+                    <Footer>Footer</Footer>
+                </Layout>
+            </Layout>
+
         </>
     )
 }
