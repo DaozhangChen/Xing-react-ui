@@ -1,6 +1,3 @@
-.disable{
-  display: none;
-}
 .xing_ui_dialog{
   &_wrapper{
     position: absolute;
@@ -40,13 +37,28 @@
       color: #ffffff;
     }
     &_cancel{
-      margin-inline-start: 8px;
       background-color:#ffffff;
       border: 1px solid #d9d9d9;
       font-size: 14px;
       height: 32px;
       padding: 4px 15px;
       border-radius: 6px;
+      color: black;
+      margin-inline-start: 0;
     }
+  }
+}
+
+footer{
+  text-align: end;
+  margin-top: 12px;
+  button{
+    margin-inline-start: 8px;
+    background-color:#1677ff ;
+    font-size: 14px;
+    height: 32px;
+    padding: 4px 15px;
+    border-radius: 6px;
+    color: #ffffff;
   }
 }
