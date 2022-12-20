@@ -3,10 +3,10 @@ import React, {
     MouseEventHandler,
     ReactNode
 } from "react";
-import {createPortal,render,unmountComponentAtNode} from "react-dom";
+import {createPortal} from "react-dom";
 import Icon from "../icon/icon";
-import ReactDOM, {createRoot} from "react-dom/client";
-type Prop={
+import ReactDOM from "react-dom/client";
+interface Prop{
     visible:boolean
     maskOnClick?:MouseEventHandler<HTMLDivElement>
     titleText?:string
@@ -18,6 +18,11 @@ type Prop={
     customFooter?:ReactNode[]
     onClose?:MouseEventHandler
 }
+interface easyProp{
+    titleText?:string
+    onClose?:()=>void
+}
+
 
 const Dialog=(props:Prop)=>{
     return createPortal((
@@ -47,10 +52,15 @@ const Dialog=(props:Prop)=>{
 }
 
 const dialog={
-    info:()=>{
-        const container=<Dialog visible={true} onClose={()=>{
-        reactDiv.unmount()
-        }
+    info:(arg:easyProp)=>{
+        const container=<Dialog visible={true}
+                                titleText={arg.titleText}
+                                onClose={()=>{
+                                    if (arg.onClose){
+                                    arg.onClose()
+                                 }
+                                    reactDiv.unmount()
+                                }
         } okClick={()=>setInterval(()=>{console.log('1111')},1000)}/>
         const div = document.createElement('div')
         const reactDiv = ReactDOM.createRoot(div)

@@ -37,7 +37,10 @@ const mainPage = ()=>{
                 </Dialog>
             </div>
             <h2>示例2</h2>
-            <button onClick={()=>dialog.info()}>info</button>
+            <button onClick={()=>dialog.info({
+                titleText:'示例2',
+                onClose:()=>{console.log('3211')}
+            })}>info</button>
         </>
     )
 }
