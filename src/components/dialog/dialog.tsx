@@ -3,8 +3,9 @@ import React, {
     MouseEventHandler,
     ReactNode
 } from "react";
-import {createPortal,render} from "react-dom";
+import {createPortal,render,unmountComponentAtNode} from "react-dom";
 import Icon from "../icon/icon";
+import ReactDOM, {createRoot} from "react-dom/client";
 type Prop={
     visible:boolean
     maskOnClick?:MouseEventHandler<HTMLDivElement>
@@ -47,10 +48,13 @@ const Dialog=(props:Prop)=>{
 
 const dialog={
     info:()=>{
-        const container=<Dialog visible={true}/>
+        const container=<Dialog visible={true} onClose={()=>{
+        reactDiv.unmount()
+        }
+        } okClick={()=>setInterval(()=>{console.log('1111')},1000)}/>
         const div = document.createElement('div')
-        document.body.append(div)
-        render(container,div)
+        const reactDiv = ReactDOM.createRoot(div)
+        reactDiv.render(container)
     }
 }
 export {Dialog,dialog}
