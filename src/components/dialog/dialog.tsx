@@ -15,6 +15,7 @@ type Prop={
     cancelText?:string
     okText?:string
     customFooter?:ReactNode[]
+    onClose?:MouseEventHandler
 }
 
 const Dialog=(props:Prop)=>{
@@ -23,7 +24,7 @@ const Dialog=(props:Prop)=>{
             <div className={s.xing_ui_dialog_wrapper}>
                 <div className={s.xing_ui_dialog_mask} onClick={props.maskOnClick}/>
                 <div className={s.xing_ui_dialog_main}>
-                    <Icon name='close' className={s.xing_ui_dialog_icon}/>
+                    <Icon name='close' className={s.xing_ui_dialog_icon} onClick={props.onClose}/>
                     <header className={s.xing_ui_dialog_title}>{props.titleText?props.titleText:'提醒'}</header>
                     {props.children}
                     <footer className={props.customFooter? undefined :s.xing_ui_dialog_button}>{

@@ -29,6 +29,7 @@ const mainPage = ()=>{
                         okText="这是一个确认按钮"
                         cancelText="这是一个取消按钮"
                         customFooter={[<button className={s.button}>你好</button>,<button>hello</button>, <button>324</button>]}
+                        onClose={onClick}
                 >
                     <div>你好</div>
                     <div>你好2</div>
