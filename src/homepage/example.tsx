@@ -1,6 +1,6 @@
 import Icon from "../components/icon/icon";
 import Shop from "@assets/icons/shop.svg";
-import s from './mainPage.module.scss'
+import s from './example.module.scss'
 import {Dialog,dialog} from "../components/dialog/dialog";
 import {useState} from "react";
 import Layout from "../layout/layout";
@@ -9,7 +9,7 @@ import Content from "../layout/content";
 import Footer from "../layout/footer";
 import Aside from "../layout/aside";
 
-const mainPage = ()=>{
+const example = ()=>{
     const [visible,setVisible]=useState<boolean>(false)
     const onClick=()=>{
         console.log('321')
@@ -91,4 +91,4 @@ const mainPage = ()=>{
     )
 }
 
-export default mainPage
+export default example

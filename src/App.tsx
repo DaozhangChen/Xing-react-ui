@@ -1,4 +1,4 @@
-import MainPage from "./homepage/mainPage";
+import MainPage from "./homepage/example";
 import './App.scss'
 const App = () => {
     return (<>
