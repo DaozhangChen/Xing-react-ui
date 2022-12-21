@@ -13,7 +13,6 @@ const introduction =()=>{
     const onSelect:MouseEventHandler=(e:React.MouseEvent)=>{
         console.log(e.currentTarget.id)
         console.log(parmas)
-
     }
     return (
         <>
@@ -24,7 +23,7 @@ const introduction =()=>{
                         <div>所有组件</div>
                         <ul>
                             {listObject.map(li=><Link key={li.eName} to={`/introduction/${li.eName[0].toLowerCase() + li.eName.substring(1)}`}>
-                                <li  id={li.eName} onClick={onSelect}>
+                                <li id={li.eName} onClick={onSelect}>
                                     <span>{li.eName}</span>
                                     <span className={s.text}>{li.text}</span>
                                 </li>
