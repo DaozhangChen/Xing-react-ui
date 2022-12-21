@@ -31,9 +31,74 @@
     }
   }
 }
-.background{
-  object-fit: fill;
-  width: 100vw;
-  height: 40vh;
-  filter:hue-rotate(40deg);
+.layoutContent{
+  .background{
+    object-fit: fill;
+    width: 100vw;
+    height: 40vh;
+    filter:hue-rotate(40deg);
+  }
+  .outerMainText{
+    padding: 80px 0;
+    .mainSlogan{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      & h1{
+        font-size: 64px;
+        font-weight: 1000;
+        margin-bottom: 20px;
+      }
+      & p{
+        font-size: 24px;
+        line-height: 1.5;
+        color: rgba(0,0,0,0.85);
+        word-break: break-word;
+        margin-bottom: 20px;
+      }
+      & button{
+        font-size: 16px;
+        height: 40px;
+        padding: 6px 15px;
+        color: #ffffff;
+        border-radius: 8px;
+        background-color: rgba(84,66,225,1);
+        margin-bottom: 96px;
+      }
+    }
+    .cardItem{
+      display: flex;
+      column-gap: 40px;
+      padding-inline: 48px ;
+      align-items: stretch;
+      text-align: start;
+      & .card{
+        display: flex;
+        flex: 1 1 0px;
+        flex-direction: column;
+        width: 33%;
+        padding-inline: 24px;
+        padding-block:20px ;
+        border: 1px solid rgb(240,240,240);
+        & h3{
+          font-size: 20px;
+          line-height: 1.5;
+          font-weight: 600;
+          text-align: center;
+          margin-bottom: 0.5em;
+        }
+        & span{
+          text-align: center;
+        }
+        & p{
+          color: rgba(0,0,0,0.45);
+        }
+
+      }
+    }
+  }
+}
+.icon{
+  height: 43px;
+  width: 43px;
 }

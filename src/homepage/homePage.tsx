@@ -22,8 +22,38 @@ const homePage =()=>{
                     <Icon className={s.icon} name="github" />
                 </div>
             </Header>
-            <Content>
+            <Content className={s.layoutContent}>
                 <video src={background} autoPlay={true} className={s.background} loop={true}/>
+                <div className={s.outerMainText}>
+                    <div className={s.mainSlogan}>
+                    <h1>Xing UI</h1>
+                    <p>&#12300; 一款基于React的UI组件，简化您的开发流程 &#12301;</p>
+                    <button>开始使用</button>
+                    </div>
+                    <div className={s.cardItem}>
+                        <div className={s.card}>
+                            <span>
+                            <Icon name='react' className={s.icon}/>
+                            </span>
+                            <h3>基于React开发</h3>
+                            <p>使用了最新的React 18以及hooks进行内容编写，稳定好用</p>
+                        </div>
+                        <div className={s.card}>
+                            <span>
+                            <Icon name='buildBlock' className={s.icon}/>
+                            </span>
+                            <h3>组件简单易用</h3>
+                            <p>研究了多方UI组件与人的交互关系，做到了使任何人都能简单上手</p>
+                        </div>
+                        <div className={s.card}>
+                            <span>
+                            <Icon name='shop' className={s.icon}/>
+                            </span>
+                            <h3>自定义组件</h3>
+                            <p>组件拥有多个设置接口，能够让你自定义任何想要的内容</p>
+                        </div>
+                    </div>
+                </div>
             </Content>
             <Footer></Footer>
         </Layout>
