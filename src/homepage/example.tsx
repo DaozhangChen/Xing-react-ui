@@ -3,11 +3,11 @@ import Shop from "@assets/icons/shop.svg";
 import s from './example.module.scss'
 import {Dialog,dialog} from "../components/dialog/dialog";
 import {useState} from "react";
-import Layout from "../layout/layout";
-import Header from "../layout/header";
-import Content from "../layout/content";
-import Footer from "../layout/footer";
-import Aside from "../layout/aside";
+import Layout from "../components/layout/layout";
+import Header from "../components/layout/header";
+import Content from "../components/layout/content";
+import Footer from "../components/layout/footer";
+import Aside from "../components/layout/aside";
 
 const example = ()=>{
     const [visible,setVisible]=useState<boolean>(false)
@@ -54,36 +54,36 @@ const example = ()=>{
             <hr/>
             <div>Layout组件</div>
             <h2>上中下</h2>
-            <Layout style={{height:500}}>
-                <Header>Header</Header>
-                <Content>Content</Content>
-                <Footer>Footer</Footer>
+            <Layout className={s.layout} style={{height:500}}>
+                <Header className={s.layout_header}>Header</Header>
+                <Content className={s.layout_content}>Content</Content>
+                <Footer className={s.layout_footer}>Footer</Footer>
             </Layout>
             <h2>顶部侧边布局边栏1</h2>
-            <Layout style={{height:500}}>
-                <Header>Header</Header>
-                <Layout>
-                    <Aside>Aside</Aside>
-                    <Content>Content</Content>
+            <Layout className={s.layout} style={{height:500}}>
+                <Header className={s.layout_header}>Header</Header>
+                <Layout className={s.layout}>
+                    <Aside className={s.layout_aside}>Aside</Aside>
+                    <Content className={s.layout_content}>Content</Content>
                 </Layout>
-                <Footer>Footer</Footer>
+                <Footer className={s.layout_footer}>Footer</Footer>
             </Layout>
             <h2>顶部侧边布局边栏2</h2>
-            <Layout style={{height:500}}>
-                <Header>Header</Header>
-                <Layout>
-                    <Content>Content</Content>
-                    <Aside>Aside</Aside>
+            <Layout className={s.layout} style={{height:500}}>
+                <Header className={s.layout_header}>Header</Header>
+                <Layout className={s.layout}>
+                    <Content className={s.layout_content}>Content</Content>
+                    <Aside className={s.layout_aside}>Aside</Aside>
                 </Layout>
-                <Footer>Footer</Footer>
+                <Footer className={s.layout_footer}>Footer</Footer>
             </Layout>
             <h2>侧边顶部布局</h2>
-            <Layout style={{height:500}}>
-                <Aside>Aside</Aside>
-                <Layout>
-                    <Header>Header</Header>
-                    <Content>Content</Content>
-                    <Footer>Footer</Footer>
+            <Layout className={s.layout} style={{height:500}}>
+                <Aside className={s.layout_aside}>Aside</Aside>
+                <Layout className={s.layout}>
+                    <Header className={s.layout_header}>Header</Header>
+                    <Content className={s.layout_content}>Content</Content>
+                    <Footer className={s.layout_footer}>Footer</Footer>
                 </Layout>
             </Layout>
 

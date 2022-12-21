@@ -1,12 +1,9 @@
 .xing_ui_layout{
-  border: 1px solid red;
   display: flex;
   flex-direction: column ;
   &_header{
-    background-color: rgba(100,200,100,0.5);
   }
   &_footer{
-    background-color: rgba(200,100,100,0.5);
   }
   &.hasAside{
     flex-direction: row;
@@ -20,9 +17,7 @@
   }
   &_content{
     flex-grow: 1;
-    background-color: rgba(100,100,200,0.5);
   }
   &_aside{
-    background-color: rgba(100,300,300,0.5);
   }
 }
