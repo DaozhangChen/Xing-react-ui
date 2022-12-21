@@ -1,33 +1,28 @@
 import s from './introduction.module.scss'
 import Layout from "../components/layout/layout";
-import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import Aside from "../components/layout/aside";
 import Content from "../components/layout/content";
-import mainLogo from "../assets/mainLogo.png";
-import Icon from "../components/icon/icon";
 import React from "react";
+import ShareHeader from "./share/shareHeader";
+import {Link, Outlet, Route, Routes} from "react-router-dom";
 const introduction =()=>{
     return (
         <>
             <Layout>
-                <Header className={s.layoutHeader}>
-                    <div className={s.iconAndTitle}>
-                        <img src={mainLogo} className={s.mainLogo}/>
-                        <h2>XING UI</h2>
-                    </div>
-                    <div className={s.headerRight}>
+                <ShareHeader />
+                <Layout className={s.mainLayout}>
+                    <Aside className={s.mainAside}>
                         <ul>
-                            <li>Vue版</li>
+                            <li><Link to="/introduction/icon"><span>Icon</span> <span>图标</span></Link></li>
+                            <li><Link to="/introduction/dialog"><span>Dialog</span> <span>对话框</span></Link></li>
+                            <li><Link to="/introduction/layout"><span>Layout</span> <span>布局</span></Link></li>
                         </ul>
-                        <Icon className={s.icon} name="github" />
-                    </div>
-                </Header>
-                <Layout>
-                    <Aside>Aside</Aside>
-                    <Content>Content</Content>
+                    </Aside>
+                    <Content className={s.mainContent}>
+                        <Outlet/>
+                    </Content>
                 </Layout>
-                <Footer>Footer</Footer>
             </Layout>
         </>
     )

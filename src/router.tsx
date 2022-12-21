@@ -10,7 +10,21 @@ const router = createHashRouter([
     },
     {
         path:'/introduction',
-        element:<Introduction />
+        element:<Introduction />,
+        children:[
+            {
+                path:'icon',
+                element:<div>icon</div>
+            },
+            {
+                path:'dialog',
+                element:<div>dialog</div>
+            },
+            {
+                path:'layout',
+                element:<div>layout</div>
+            }
+        ]
     }
 ])
 
