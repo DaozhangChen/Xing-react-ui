@@ -1,6 +1,7 @@
 import {createHashRouter} from "react-router-dom";
 import React from "react";
 import HomePage from "./homepage/homePage";
+import Introduction from "./homepage/introduction";
 
 const router = createHashRouter([
     {
@@ -8,8 +9,8 @@ const router = createHashRouter([
         element:<HomePage/>
     },
     {
-        path:'/hello',
-        element:<div>？？？</div>
+        path:'/introduction',
+        element:<Introduction />
     }
 ])
 

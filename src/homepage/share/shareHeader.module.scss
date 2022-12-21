@@ -1,0 +1,32 @@
+.layoutHeader {
+  padding:0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  .mainLogo{
+    height: 32px;
+  }
+  .iconAndTitle {
+    display: flex;
+    align-items: center;
+    h2 {
+      font-size: 18px;
+      margin: 0 12px;
+    }
+  }
+  .headerRight{
+    display: flex;
+    align-items: center;
+    li{
+      line-height: 64px;
+      cursor: pointer;
+    }
+    .icon{
+      height: 32px;
+      width: 32px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+  }
+}

@@ -6,29 +6,23 @@ import Icon from "../components/icon/icon";
 import s from './homePage.module.scss'
 import background from '../assets/background.mp4'
 import mainLogo from '../assets/mainLogo.png'
+import React from "react";
+import {Link} from "react-router-dom";
+import ShareHeader from "./share/shareHeader";
 const homePage =()=>{
     return (
         <>
         <Layout>
-            <Header className={s.layoutHeader}>
-                <div className={s.iconAndTitle}>
-                    <img src={mainLogo} className={s.mainLogo}/>
-                    <h2>XING UI</h2>
-                </div>
-                <div className={s.headerRight}>
-                    <ul>
-                        <li>Vue版</li>
-                    </ul>
-                    <Icon className={s.icon} name="github" />
-                </div>
-            </Header>
+            <ShareHeader />
             <Content className={s.layoutContent}>
                 <video src={background} autoPlay={true} className={s.background} loop={true}/>
                 <div className={s.outerMainText}>
                     <div className={s.mainSlogan}>
                     <h1>Xing UI</h1>
                     <p>&#12300; 一款基于React的UI组件，简化您的开发流程 &#12301;</p>
+                        <Link to="/introduction">
                     <button>开始使用</button>
+                        </Link>
                     </div>
                     <div className={s.cardItem}>
                         <div className={s.card}>
