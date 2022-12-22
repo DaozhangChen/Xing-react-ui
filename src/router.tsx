@@ -3,6 +3,7 @@ import React from "react";
 import HomePage from "./homepage/homePage";
 import Introduction from "./homepage/introduction";
 import IconExample from "./components/icon/icon.example";
+import DialogExample from "./components/dialog/dialog.example";
 
 const router = createHashRouter([
     {
@@ -19,7 +20,7 @@ const router = createHashRouter([
             },
             {
                 path:'dialog',
-                element:<div>dialog</div>
+                element:<DialogExample />
             },
             {
                 path:'layout',

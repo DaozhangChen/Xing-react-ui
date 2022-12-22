@@ -21,7 +21,7 @@ const iconExample = ()=>{
     HighLight.registerLanguage('tsx',tsx)
     return (
         <>
-        <h1>Icon 组件</h1>
+        <h1>Icon 图标</h1>
             <p>Icon组件可以让你及其轻松的使用各种图标，你可以通过传入不同的图标名称来渲染对应的图标，也可以自定义图标的样式，例如颜色、大小等。</p>
             <h2>图标列表</h2>
             <h3>单色图标</h3>

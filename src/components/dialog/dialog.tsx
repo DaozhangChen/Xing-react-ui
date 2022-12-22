@@ -83,7 +83,7 @@ const dialog={
     },
     alert:(arg:alertProp)=>{
         const container=<Dialog visible={true}
-                                children={[<p>{arg.message}</p>]}
+                                children={<>{arg.message}</>}
                                 customFooter={[]}
                                 onClose={()=>{arg.onClose?.();reactDiv.unmount()}}
                                 maskOnClick={()=>{arg.maskOnClick?.();reactDiv.unmount()}}
