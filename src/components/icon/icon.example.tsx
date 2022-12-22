@@ -1,8 +1,6 @@
-import {Light as HighLight} from 'react-syntax-highlighter'
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light'
-import tsx from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript'
 import Icon from "./icon";
 import s from './icon.example.module.scss'
+import HighLightCode from "../../homepage/share/highLightCode";
 const iconExample = ()=>{
     let oneColorList = []
     let moreColorList = []
@@ -18,7 +16,48 @@ const iconExample = ()=>{
         const match = regex.exec(path)
         moreColorList.push(match?.[1])
     }
-    HighLight.registerLanguage('tsx',tsx)
+    const baseUsage=`
+const myComponent=()=>{
+    return (
+        <>
+        <Icon name='add' />
+        <Icon name='商店' />
+        </>
+    )
+}
+export default myComponent
+                `
+    const changeIconCode=`
+import './style.css'
+
+//   style.css
+//
+// .iconRed{
+//     fill: red;
+// }
+// .iconBlue{
+//     fill: blue;
+// }
+const myComponent=()=>{
+    return (
+        <>
+        <Icon name='add' className='iconRed'/>
+        <Icon name='close' className='iconBlue' />
+        </>
+    )
+}
+                    `
+    const customIconCode=`
+import mySvg from "svg的路径"
+
+const myComponent=()=>{
+    return (
+        <>
+        <Icon component={mySvg}/>
+        </>
+    )
+}
+                    `
     return (
         <>
         <h1>Icon 图标</h1>
@@ -50,19 +89,7 @@ const iconExample = ()=>{
                 <Icon name='商店' className={s.icon}/>
             </div>
             <div className={s.changeSize}>
-            <HighLight style={style}>
-                {`
-const myComponent=()=>{
-    return (
-        <>
-        <Icon name='add' />
-        <Icon name='商店' />
-        </>
-    )
-}
-export default myComponent
-                `}
-            </HighLight>
+            <HighLightCode code={baseUsage}/>
             </div>
             <h3>修改Icon</h3>
             <p>将自己的CSS属性，通过Icon的className进行属性覆盖，即可修改原有的属性，下面我将使用fill属性来修改Icon原有的颜色</p>
@@ -71,45 +98,12 @@ export default myComponent
                 <Icon name='close' style={{fill:"blue",height:36,width:36}} />
             </div>
             <div className={s.changeSize}>
-                <HighLight style={style}>
-                    {`
-import './style.css'
-
-//   style.css
-//
-// .iconRed{
-//     fill: red;
-// }
-// .iconBlue{
-//     fill: blue;
-// }
-const myComponent=()=>{
-    return (
-        <>
-        <Icon name='add' className='iconRed'/>
-        <Icon name='close' className='iconBlue' />
-        </>
-    )
-}
-                    `}
-                </HighLight>
+                <HighLightCode code={changeIconCode} />
             </div>
             <h3>自定义Icon</h3>
             <p>可以通过Icon的component标签，自定义个性化Icon</p>
             <div className={s.changeSize}>
-                <HighLight style={style}>
-                    {`
-import mySvg from "svg的路径"
-
-const myComponent=()=>{
-    return (
-        <>
-        <Icon component={mySvg}/>
-        </>
-    )
-}
-                    `}
-                </HighLight>
+                <HighLightCode code={customIconCode} />
             </div>
         </>
     )

@@ -1,10 +1,14 @@
 import s from './dialog.example.module.scss'
 import {Dialog, dialog} from "./dialog";
-import {ReactNode, useState} from "react";
+import { useState} from "react";
+import {Light as HighLight} from 'react-syntax-highlighter'
+import style from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light'
+import tsx from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript'
 const dialogExample = () =>{
     const [firstDialog,setFirstDialog] = useState(false)
     const [customAttr,setCustomAttr] = useState(false)
     const [customFooter,setCustomFooter] = useState(false)
+    HighLight.registerLanguage('tsx',tsx)
     const openDialog=()=>{
         dialog.info({titleText:'这是使用函数调用'})
     }
@@ -51,6 +55,11 @@ const dialogExample = () =>{
                     <p>这是使用DOM调用</p>
                 </Dialog>
             </div>
+             <div>
+                 <HighLight style={style} language="tsx">
+
+                 </HighLight>
+             </div>
             <h3>使用DOM方式</h3>
             <p>从上面的例子中可以看到Dialog是可以被自定义的，包括这个组件的方方面面，下面是Dialog的自定义属性</p>
             <ul>
