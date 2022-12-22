@@ -1,11 +1,9 @@
 import Layout from "../components/layout/layout";
-import Header from "../components/layout/header";
 import Content from "../components/layout/content";
 import Footer from "../components/layout/footer";
 import Icon from "../components/icon/icon";
 import s from './homePage.module.scss'
 import background from '../assets/background.mp4'
-import mainLogo from '../assets/mainLogo.png'
 import React from "react";
 import {Link} from "react-router-dom";
 import ShareHeader from "./share/shareHeader";
@@ -34,14 +32,14 @@ const homePage =()=>{
                         </div>
                         <div className={s.card}>
                             <span>
-                            <Icon name='buildBlock' className={s.icon}/>
+                            <Icon name='组件' className={s.icon}/>
                             </span>
                             <h3>组件简单易用</h3>
                             <p>研究了多方UI组件与人的交互关系，做到了使任何人都能简单上手</p>
                         </div>
                         <div className={s.card}>
                             <span>
-                            <Icon name='shop' className={s.icon}/>
+                            <Icon name='商店' className={s.icon}/>
                             </span>
                             <h3>自定义组件</h3>
                             <p>组件拥有多个设置接口，能够让你自定义任何想要的内容</p>
