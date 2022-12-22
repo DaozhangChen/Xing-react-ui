@@ -2,6 +2,7 @@ import {createHashRouter} from "react-router-dom";
 import React from "react";
 import HomePage from "./homepage/homePage";
 import Introduction from "./homepage/introduction";
+import IconExample from "./components/icon/icon.example";
 
 const router = createHashRouter([
     {
@@ -14,7 +15,7 @@ const router = createHashRouter([
         children:[
             {
                 path:'icon',
-                element:<div>icon</div>
+                element:<IconExample />
             },
             {
                 path:'dialog',
