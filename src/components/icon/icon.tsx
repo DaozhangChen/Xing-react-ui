@@ -1,9 +1,8 @@
 import React from 'react'
 
-type Prop = {
+interface Prop extends React.HTMLAttributes<HTMLElement>{
     name: string
     className?:string
-    onClick?:Function
     component?:Function|string
 }
 type IconProp={
@@ -21,8 +20,8 @@ const Icon =(props:Prop)=>{
   const CustomSVG = props.component
     return (<>
             {/*// @ts-ignore*/}
-      {props.component? <CustomSVG className={props.className} onClick={props.onClick}/>
-          : <IconComponent className={props.className} onClick={props.onClick} /> }
+      {props.component? <CustomSVG className={props.className} onClick={props.onClick} {...props}/>
+          : <IconComponent className={props.className} onClick={props.onClick} {...props}/> }
       </>
       )
 
