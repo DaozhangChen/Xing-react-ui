@@ -14,7 +14,6 @@ type SvgImport = {
     [path: string]: { default: React.ComponentType<IconProp> }
 }
 const Icon =(props:Prop)=>{
-    debugger
   const moreColorList: SvgImport = import.meta.glob('@assets/icons/moreColorIcon/*.svg', { eager: true })
   const oneColorIconList:SvgImport = import.meta.glob('@assets/icons/oneColorIcon/*.svg',{eager:true})
   const one:string = `/src/assets/icons/oneColorIcon/${props.name}.svg`
