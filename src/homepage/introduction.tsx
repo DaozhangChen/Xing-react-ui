@@ -2,7 +2,7 @@ import s from './introduction.module.scss'
 import Layout from "../components/layout/layout";
 import Aside from "../components/layout/aside";
 import Content from "../components/layout/content";
-import React, {MouseEventHandler, useEffect,  useState} from "react";
+import React, { MouseEventHandler, useEffect, useRef, useState} from "react";
 import ShareHeader from "./share/shareHeader";
 import {Link, Outlet, useMatch} from "react-router-dom";
 import {listObject} from "./share/listObject";
@@ -19,6 +19,12 @@ const introduction =()=>{
     const onSelect:MouseEventHandler=(e:React.MouseEvent)=>{
         setSelected(e.currentTarget.id)
     }
+    const myRef=useRef<HTMLDivElement>(null)
+    useEffect(()=>{
+        if (myRef.current){
+            myRef.current?.scrollTo(0,0)
+        }
+    })
     return (
         <>
             <Layout>
@@ -35,7 +41,7 @@ const introduction =()=>{
                             </Link>)}
                         </ul>
                     </Aside>
-                    <Content className={s.mainContent}>
+                    <Content className={s.mainContent} ref={myRef}>
                         <Outlet/>
                     </Content>
                 </Layout>
