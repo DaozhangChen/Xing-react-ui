@@ -88,7 +88,7 @@ const myComponent=()=>{
                 <Icon name='add' className={s.icon}/>
                 <Icon name='商店' className={s.icon}/>
             </div>
-            <div className={s.changeSize}>
+            <div>
             <HighLightCode code={baseUsage}/>
             </div>
             <h3>修改Icon</h3>
@@ -97,12 +97,12 @@ const myComponent=()=>{
                 <Icon name='add' style={{fill:"red",height:36,width:36}}/>
                 <Icon name='close' style={{fill:"blue",height:36,width:36}} />
             </div>
-            <div className={s.changeSize}>
+            <div >
                 <HighLightCode code={changeIconCode} />
             </div>
             <h3>自定义Icon</h3>
             <p>可以通过Icon的component标签，自定义个性化Icon</p>
-            <div className={s.changeSize}>
+            <div >
                 <HighLightCode code={customIconCode} />
             </div>
         </>
