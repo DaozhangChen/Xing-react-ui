@@ -1,14 +1,11 @@
 import s from './dialog.example.module.scss'
 import {Dialog, dialog} from "./dialog";
 import { useState} from "react";
-import {Light as HighLight} from 'react-syntax-highlighter'
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/atom-one-light'
-import tsx from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript'
+import HighLightCode from "../../homepage/share/highLightCode";
 const dialogExample = () =>{
     const [firstDialog,setFirstDialog] = useState(false)
     const [customAttr,setCustomAttr] = useState(false)
     const [customFooter,setCustomFooter] = useState(false)
-    HighLight.registerLanguage('tsx',tsx)
     const openDialog=()=>{
         dialog.info({titleText:'这是使用函数调用'})
     }
@@ -35,6 +32,87 @@ const dialogExample = () =>{
             maskOnClick:()=>{console.log('alert mask')}
         })
     }
+    const baseUsageCode =` const myComponent=()=>{
+    const [firstDialog,setFirstDialog] = useState(false)
+    const openDialog=()=>{
+        dialog.info({titleText:'这是使用函数调用'})
+    }
+    return (
+        <>
+            <div>
+                <button onClick={()=>setFirstDialog(!firstDialog)}>使用DOM方式调用</button>
+                <button onClick={openDialog}>使用函数调用</button>
+                <Dialog visible={firstDialog}
+                        onClose={()=>setFirstDialog(false)}
+                        maskOnClick={()=>setFirstDialog(false)}
+                        okClick={()=>setFirstDialog(false)}
+                        cancelClick={()=>setFirstDialog(false)}
+                >
+                    <p>这是使用DOM调用</p>
+                </Dialog>
+            </div>
+        </>
+    )
+}`
+    const domUsageCode=`const myComponent=()=>{
+    const [customAttr,setCustomAttr] = useState(false)
+    const [customFooter,setCustomFooter] = useState(false)
+    return <>
+    <button onClick={()=>setCustomAttr(true)} >自定义Dialog标签</button>
+    <button onClick={()=>setCustomFooter(true)} >自定义Footer</button>
+    <Dialog visible={customAttr}
+            titleText="这是一个自定义标题"
+            okText="这是确认按钮"
+            cancelText="这是取消按钮"
+            okClick={()=>{setCustomAttr(false);console.log('确认了')}}
+            cancelClick={()=>{setCustomAttr(false);console.log('取消了')}}
+            maskOnClick={()=>{setCustomAttr(false);console.log('点击了mask')}}
+            onClose={()=>{setCustomAttr(false);console.log('点击了close图标')}}
+    >
+        <div>这是自定义内容1</div>
+        <div>这是自定义内容2</div>
+    </Dialog>
+    <Dialog visible={customFooter}
+            okClick={()=>setCustomFooter(false)}
+            cancelClick={()=>setCustomFooter(false)}
+            maskOnClick={()=>setCustomFooter(false)}
+            onClose={()=>setCustomFooter(false)}
+            customFooter={[<button key='1'>button1</button>,<button key='2'>button2</button>, <button key='3'>button3</button>]}
+    >
+        <div>下面是自定义的Footer</div>
+        <div>自定义按钮的点击事件也需要自己添加</div>
+    </Dialog>
+    </>
+}`
+    const funcUsageCode = `const myComponent=()=>{
+    const addInfo=()=>{
+        dialog.info({
+            titleText:'一个info',
+            okText:'OK',
+            cancelText:'Cancel',
+            okClick:()=>{console.log('info OK')},
+            cancelClick:()=>{console.log('info Cancel')},
+            maskOnClick:()=>{console.log('info mask')},
+            onClose:()=>{console.log('info closed')},
+            children:<>
+                <div>111</div>
+                <div>222</div>
+            </>
+        })
+    }
+    const addAlert=()=>{
+        dialog.alert({
+            titleText:'Alert',
+            message:'这是一个警告',
+            onClose:()=>{console.log('alert Closed')},
+            maskOnClick:()=>{console.log('alert mask')}
+        })
+    }
+    return <>
+        <button onClick={addInfo} >info</button>
+        <button onClick={addAlert} >alert</button>
+    </>
+}`
     return (
         <>
             <div className={s.wrapper}>
@@ -56,9 +134,7 @@ const dialogExample = () =>{
                 </Dialog>
             </div>
              <div>
-                 <HighLight style={style} language="tsx">
-
-                 </HighLight>
+                 <HighLightCode code={baseUsageCode} />
              </div>
             <h3>使用DOM方式</h3>
             <p>从上面的例子中可以看到Dialog是可以被自定义的，包括这个组件的方方面面，下面是Dialog的自定义属性</p>
@@ -101,6 +177,9 @@ const dialogExample = () =>{
                     <div>自定义按钮的点击事件也需要自己添加</div>
                 </Dialog>
             </div>
+            <div>
+                <HighLightCode code={domUsageCode} />
+            </div>
             <h3>使用函数调用方式</h3>
             <p>
                 函数调用方式与DOM调用方式相比更简单也更为常用，只是通过函数调用方式形成的Dialog不需要自己添加关闭事件，
@@ -127,6 +206,9 @@ const dialogExample = () =>{
                 <h3>使用演示</h3>
                 <button onClick={addInfo} className={s.button}>info</button>
                 <button onClick={addAlert} className={s.button}>alert</button>
+            </div>
+            <div>
+               <HighLightCode code={funcUsageCode} />
             </div>
             </div>
         </>
