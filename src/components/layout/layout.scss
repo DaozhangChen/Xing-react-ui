@@ -1,23 +1,17 @@
 .xing_ui_layout{
   display: flex;
-  flex-direction: column ;
-  &_header{
-  }
-  &_footer{
-  }
-  &.hasAside{
-    flex-direction: row;
-    .xing_ui_layout{
-      flex-direction: column;
-    }
+  flex-direction: column;
+  &_content{
+    flex-grow: 1;
   }
   & &{
     flex-grow: 1;
     flex-direction: row;
   }
-  &_content{
-    flex-grow: 1;
-  }
-  &_aside{
+  &_hasAside{
+    flex-direction: row;
+    .xing_ui_layout{
+      flex-direction: column;
+    }
   }
 }

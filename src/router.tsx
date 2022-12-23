@@ -5,6 +5,7 @@ import Introduction from "./homepage/introduction";
 import IconExample from "./components/icon/icon.example";
 import DialogExample from "./components/dialog/dialog.example";
 import LayoutExample from "./components/layout/layout.example";
+import Example from "./homepage/example";
 
 const router = createHashRouter([
     {
@@ -29,6 +30,10 @@ const router = createHashRouter([
             }
         ]
     },
+    {
+        path:'/example',
+        element:<Example />
+    }
 ])
 
 

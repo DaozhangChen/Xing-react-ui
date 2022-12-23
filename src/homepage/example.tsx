@@ -18,10 +18,7 @@ const example = ()=>{
     return (
         <>
             <div>Icon组件</div>
-            <div>
-                <Icon name='play' className={s.icon}/>
-                <Icon name='menu' className={s.icon} component={Shop}/>
-            </div>
+
             <hr/>
             <div>Dialog组件</div>
             <h2>示例1</h2>
