@@ -77,7 +77,11 @@ const dialogExample = () =>{
             cancelClick={()=>setCustomFooter(false)}
             maskOnClick={()=>setCustomFooter(false)}
             onClose={()=>setCustomFooter(false)}
-            customFooter={[<button key='1'>button1</button>,<button key='2'>button2</button>, <button key='3'>button3</button>]}
+            customFooter={[
+            <button key='1'>button1</button>,
+            <button key='2'>button2</button>, 
+            <button key='3'>button3</button>
+            ]}
     >
         <div>下面是自定义的Footer</div>
         <div>自定义按钮的点击事件也需要自己添加</div>
@@ -115,7 +119,6 @@ const dialogExample = () =>{
 }`
     return (
         <>
-            <div className={s.wrapper}>
             <h1>Dialog 对话框</h1>
             <p>当开发者想要在当前页面，提醒用户进行某些操作，或是用作提醒，就可以使用Dialog对话框，该组件会在当前页面正中打开一个浮层，承担响应的操作</p>
             <h2>代码演示</h2>
@@ -209,7 +212,6 @@ const dialogExample = () =>{
             </div>
             <div>
                <HighLightCode code={funcUsageCode} />
-            </div>
             </div>
         </>
     )

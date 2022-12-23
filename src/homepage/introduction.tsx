@@ -19,10 +19,10 @@ const introduction =()=>{
     const onSelect:MouseEventHandler=(e:React.MouseEvent)=>{
         setSelected(e.currentTarget.id)
     }
-    const myRef=useRef<HTMLDivElement>(null)
+    const refDiv=useRef<HTMLDivElement>(null)
     useEffect(()=>{
-        if (myRef.current){
-            myRef.current?.scrollTo(0,0)
+        if (refDiv.current){
+           refDiv.current?.scrollTo(0,0)
         }
     })
     return (
@@ -41,8 +41,10 @@ const introduction =()=>{
                             </Link>)}
                         </ul>
                     </Aside>
-                    <Content className={s.mainContent} ref={myRef}>
+                    <Content className={s.mainContent}>
+                        <div className={s.mainContent_in} ref={refDiv}>
                         <Outlet/>
+                        </div>
                     </Content>
                 </Layout>
             </Layout>

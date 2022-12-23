@@ -32,8 +32,12 @@
   }
   & .mainContent{
     flex: 7 7 0;
-    padding: 40px 32px 32px 64px;
-    height: calc(100vh - 64px);
-    overflow: scroll;
+
+
+    .mainContent_in{
+      overflow: scroll;
+      padding: 40px 32px 32px 64px;
+      height: calc(100vh - 64px);
+    }
   }
 }
