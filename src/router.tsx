@@ -4,6 +4,7 @@ import HomePage from "./homepage/homePage";
 import Introduction from "./homepage/introduction";
 import IconExample from "./components/icon/icon.example";
 import DialogExample from "./components/dialog/dialog.example";
+import LayoutExample from "./components/layout/layout.example";
 
 const router = createHashRouter([
     {
@@ -24,7 +25,7 @@ const router = createHashRouter([
             },
             {
                 path:'layout',
-                element:<div>layout</div>
+                element:<LayoutExample />
             }
         ]
     },
