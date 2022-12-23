@@ -1,4 +1,4 @@
-import Icon from "./icon";
+import Icon from "../../lib/icon/icon";
 import s from './icon.example.module.scss'
 import HighLightCode from "../../homepage/share/highLightCode";
 const iconExample = ()=>{

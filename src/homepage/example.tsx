@@ -1,13 +1,13 @@
-import Icon from "../components/icon/icon";
+import Icon from "../lib/icon/icon";
 import Shop from "@assets/icons/shop.svg";
 import s from './example.module.scss'
-import {Dialog,dialog} from "../components/dialog/dialog";
+import {Dialog,dialog} from "../lib/dialog/dialog";
 import {useState} from "react";
-import Layout from "../components/layout/layout";
-import Header from "../components/layout/header";
-import Content from "../components/layout/content";
-import Footer from "../components/layout/footer";
-import Aside from "../components/layout/aside";
+import Layout from "../lib/layout/layout";
+import Header from "../lib/layout/header";
+import Content from "../lib/layout/content";
+import Footer from "../lib/layout/footer";
+import Aside from "../lib/layout/aside";
 
 const example = ()=>{
     const [visible,setVisible]=useState<boolean>(false)

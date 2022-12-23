@@ -1,7 +1,7 @@
 import s from "./shareHeader.module.scss";
 import mainLogo from "@assets/mainLogo.png";
-import Icon from "../../components/icon/icon";
-import Header from "../../components/layout/header";
+import Icon from "../../lib/icon/icon";
+import Header from "../../lib/layout/header";
 import React from "react";
 import {Link} from "react-router-dom";
 

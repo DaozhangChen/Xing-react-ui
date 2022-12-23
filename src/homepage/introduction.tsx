@@ -1,7 +1,7 @@
 import s from './introduction.module.scss'
-import Layout from "../components/layout/layout";
-import Aside from "../components/layout/aside";
-import Content from "../components/layout/content";
+import Layout from "../lib/layout/layout";
+import Aside from "../lib/layout/aside";
+import Content from "../lib/layout/content";
 import React, { MouseEventHandler, useEffect, useRef, useState} from "react";
 import ShareHeader from "./share/shareHeader";
 import {Link, Outlet, useMatch} from "react-router-dom";

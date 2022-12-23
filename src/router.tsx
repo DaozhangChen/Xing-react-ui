@@ -2,9 +2,9 @@ import {createHashRouter} from "react-router-dom";
 import React from "react";
 import HomePage from "./homepage/homePage";
 import Introduction from "./homepage/introduction";
-import IconExample from "./components/icon/icon.example";
-import DialogExample from "./components/dialog/dialog.example";
-import LayoutExample from "./components/layout/layout.example";
+import IconExample from "./components/examples/icon.example";
+import DialogExample from "./components/examples/dialog.example";
+import LayoutExample from "./components/examples/layout.example";
 import Example from "./homepage/example";
 
 const router = createHashRouter([
@@ -31,7 +31,7 @@ const router = createHashRouter([
         ]
     },
     {
-        path:'/example',
+        path:'/examples',
         element:<Example />
     }
 ])
