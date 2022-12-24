@@ -38,12 +38,6 @@ interface alertProp {
 
 
 const Dialog = (props: Prop) => {
-    useEffect(()=>{
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = './dialog.scss';
-        document.head.appendChild(link);
-    },[])
     return createPortal((
         <>{props.visible ?
             <div className="xing_ui_dialog_wrapper">
