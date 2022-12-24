@@ -1,17 +1,20 @@
 {
   "name": "xing-react-ui",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "files": ["dist/lib/*","src/assets/icons"],
-  "main": "./dist/lib/xing-react-ui.umd.cjs",
-  "module": "./dist/lib/xing-react-ui.js",
+  "files": [
+    "dist/lib/*",
+    "src/assets/icons/*"
+  ],
+  "main": "dist/lib/xing-react-ui.umd.cjs",
+  "module": "dist/lib/xing-react-ui.js",
   "exports": {
     ".": {
       "import": "./dist/lib/xing-react-ui.js",
       "require": "./dist/lib/xing-react-ui.umd.cjs"
     }
-  } ,
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

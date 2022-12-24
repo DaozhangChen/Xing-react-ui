@@ -1,10 +1,8 @@
-import {Dialog} from "./dialog/dialog";
-import {dialog} from "./dialog/dialog";
-import Icon from "./icon/icon";
-import Layout from "./layout/layout";
-import Header from "./layout/header";
-import Aside from "./layout/aside";
-import Content from "./layout/content";
-import Footer from "./layout/footer";
-
-export {Dialog,dialog,Icon,Layout,Header,Aside,Content,Footer}
+export { Dialog } from "./dialog/dialog";
+export { dialog } from "./dialog/dialog";
+export { default as Icon } from "./icon/icon";
+export { default as Layout } from "./layout/layout";
+export { default as Header } from "./layout/header";
+export { default as Aside } from "./layout/aside";
+export { default as Content } from "./layout/content";
+export { default as Footer } from "./layout/footer";
