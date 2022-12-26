@@ -2,7 +2,7 @@ import s from './introduction.module.scss'
 import Layout from "../lib/layout/layout";
 import Aside from "../lib/layout/aside";
 import Content from "../lib/layout/content";
-import React, { MouseEventHandler, useEffect, useRef, useState} from "react";
+import React, {MouseEventHandler, useEffect, useLayoutEffect, useRef, useState} from "react";
 import ShareHeader from "./share/shareHeader";
 import {Link, Outlet, useMatch} from "react-router-dom";
 import {listObject} from "./share/listObject";
@@ -33,12 +33,8 @@ const introduction =()=>{
            refDiv.current?.scrollTo(0,0)
         }
     })
-    useEffect(()=>{
-        if (windowWidth<=700){
-            setVisible(false)
-        }else{
-            setVisible(true)
-        }
+    useLayoutEffect(()=>{
+        windowWidth<=700?setVisible(false): setVisible(true)
     },[windowWidth])
     return (
         <>
@@ -57,7 +53,7 @@ const introduction =()=>{
                             <div>所有组件</div>
                             <ul>
                                 {listObject.map(li=><Link key={li.eName} to={`/introduction/${toLowerName(li.eName)}`}>
-                                    <li id={li.eName} onClick={onSelect} className={toLowerName(li.eName)===selected?s.selected:undefined}>
+                                    <li id={li.eName} onClick={onSelect} className={toLowerName(li.eName)===selected||li.eName===selected?s.selected:undefined}>
                                         <span>{li.eName + ' '}</span>
                                         <span className={s.text}>{li.text}</span>
                                     </li>
