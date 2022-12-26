@@ -1,0 +1,14 @@
+.wrapper{
+  & h1{
+    margin-bottom:30px;
+  }
+  & h2,h3,h4{
+    margin: 20px 0;
+  }
+  & strong{
+    color: rgba(86,66,225,0.7);
+  }
+  & li{
+    margin: 10px 0;
+  }
+}
