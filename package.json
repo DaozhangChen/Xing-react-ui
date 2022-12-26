@@ -1,7 +1,7 @@
 {
   "name": "xing-react-ui",
   "private": false,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "files": [
     "dist/lib/*",
@@ -14,7 +14,8 @@
     ".": {
       "import": "./dist/lib/xing-react-ui.js",
       "require": "./dist/lib/xing-react-ui.umd.cjs"
-    }
+    },
+    "./dist/lib/style.css": "./dist/lib/style.css"
   },
   "scripts": {
     "dev": "vite",
