@@ -1,4 +1,4 @@
-import {createHashRouter} from "react-router-dom";
+import {createHashRouter, HashRouterProps} from "react-router-dom";
 import React from "react";
 import HomePage from "./homepage/homePage";
 import Introduction from "./homepage/introduction";
@@ -6,8 +6,9 @@ import IconExample from "./components/examples/icon.example";
 import DialogExample from "./components/examples/dialog.example";
 import LayoutExample from "./components/examples/layout.example";
 import Example from "./homepage/example";
+import Usage from "./components/commons/usage";
 
-const router = createHashRouter([
+const router:HashRouterProps = createHashRouter([
     {
         path:'/',
         element:<HomePage/>
@@ -27,6 +28,10 @@ const router = createHashRouter([
             {
                 path:'layout',
                 element:<LayoutExample />
+            },
+            {
+                path:'usage',
+                element:<Usage />
             }
         ]
     },

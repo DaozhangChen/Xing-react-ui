@@ -8,14 +8,6 @@ import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: '@import "src/vars/reset.scss";',
-        javascriptEnabled: true,
-      }
-    }
-  },
   build: {
     lib: {
       entry: path.resolve(__dirname, './src/lib/index.tsx'),

@@ -31,6 +31,13 @@ const introduction =()=>{
                 <ShareHeader />
                 <Layout className={s.mainLayout}>
                     <Aside className={s.mainAside}>
+                        <ul>
+                            <Link to="/introduction/usage">
+                                <li className={'usage'===selected?s.selected:undefined}>
+                                如何使用
+                                </li>
+                            </Link>
+                        </ul>
                         <div>所有组件</div>
                         <ul>
                             {listObject.map(li=><Link key={li.eName} to={`/introduction/${toLowerName(li.eName)}`}>

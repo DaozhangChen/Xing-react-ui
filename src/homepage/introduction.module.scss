@@ -3,11 +3,12 @@
   & .mainAside{
     flex: 2 2 0;
     height: calc(100vh - 64px);
-
-    & div{
-      font-size: 18px;
+    &:first-child{
       padding-top: 40px;
       height: 80px;
+    }
+    & div{
+      font-size: 18px;
       width: 100%;
       padding-left:30px;
       line-height: 40px;
