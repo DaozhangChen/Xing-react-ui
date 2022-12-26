@@ -4,6 +4,9 @@
   align-items: center;
   justify-content: space-between;
   height: 64px;
+  @media (max-width: 700px) {
+    padding: 0 20px;
+  }
   .mainLogo{
     height: 32px;
   }
@@ -13,6 +16,9 @@
     h2 {
       font-size: 18px;
       margin: 0 12px;
+      @media (max-width: 700px) {
+        display: none;
+      }
     }
   }
   .headerRight{
@@ -21,12 +27,30 @@
     li{
       line-height: 64px;
       cursor: pointer;
+      @media (max-width: 699px) {
+        display: none;
+      }
     }
-    .icon{
-      height: 32px;
-      width: 32px;
-      margin-left: 20px;
-      cursor: pointer;
+  }
+  .icon{
+    height: 32px;
+    width: 32px;
+    margin-left: 20px;
+    cursor: pointer;
+    @media (max-width: 700px) {
+      margin-left: 0;
+    }
+  }
+  .menuIcon{
+    height: 32px;
+    width: 32px;
+    margin-left: 20px;
+    cursor: pointer;
+    @media (max-width: 700px) {
+      margin-left: 0;
+    }
+    @media (min-width: 700px) {
+      display:none;
     }
   }
 }
