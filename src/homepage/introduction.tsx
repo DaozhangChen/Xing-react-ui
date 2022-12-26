@@ -18,18 +18,21 @@ const introduction =()=>{
             setSelected(match.params.componentName)
         }
     },[match])
+    useEffect(()=>{
+        window.addEventListener('resize',()=>setWindowWidth(window.innerWidth))
+    },[])
     const onSelect:MouseEventHandler=(e:React.MouseEvent)=>{
         setSelected(e.currentTarget.id)
     }
     const refDiv=useRef<HTMLDivElement>(null)
+    const onCloseMenu=()=>{
+        visible?setVisible(false):undefined
+    }
     useEffect(()=>{
         if (refDiv.current){
            refDiv.current?.scrollTo(0,0)
         }
     })
-    useEffect(()=>{
-        window.addEventListener('resize',()=>setWindowWidth(window.innerWidth))
-    },[])
     useEffect(()=>{
         if (windowWidth<=700){
             setVisible(false)
@@ -43,7 +46,7 @@ const introduction =()=>{
                 <ShareHeader controlMenu={setVisible} visible={visible}/>
                 <Layout className={s.mainLayout} >
                     {
-                        visible?<Aside className={s.mainAside} style={{display:visible?'block':'none'}}>
+                        visible ? <Aside className={s.mainAside}>
                             <ul>
                                 <Link to="/introduction/usage">
                                     <li className={'usage'===selected?s.selected:undefined}>
@@ -66,7 +69,7 @@ const introduction =()=>{
                     }
 
                     <Content className={s.mainContent}>
-                        <div className={s.mainContent_in} ref={refDiv}>
+                        <div className={s.mainContent_in} ref={refDiv} onClick={onCloseMenu}>
                         <Outlet/>
                         </div>
                     </Content>

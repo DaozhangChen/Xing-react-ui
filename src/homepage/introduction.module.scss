@@ -3,7 +3,14 @@
   & .mainAside{
     flex: 2 2 0;
     height: calc(100vh - 64px);
-    &:first-child{
+    background: white;
+    @media (max-width: 700px) {
+      z-index: 1;
+      position: absolute;
+      width: 50%;
+      box-shadow: 5px 0 5px -3px rgba(0, 0, 0, 0.2) ;
+    }
+    & ul:first-child{
       padding-top: 40px;
       height: 80px;
     }
