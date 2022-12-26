@@ -26,7 +26,7 @@ const introduction =()=>{
     }
     const refDiv=useRef<HTMLDivElement>(null)
     const onCloseMenu=()=>{
-        visible?setVisible(false):undefined
+        visible&&windowWidth<=700?setVisible(false):undefined
     }
     useEffect(()=>{
         if (refDiv.current){
