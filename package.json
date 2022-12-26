@@ -1,12 +1,13 @@
 {
   "name": "xing-react-ui",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.5",
   "type": "module",
   "files": [
     "dist/lib/*",
     "src/assets/icons/*"
   ],
+  "typings": "./dist/lib/lib/index.d.ts",
   "main": "./dist/lib/xing-react-ui.umd.cjs",
   "module": "./dist/lib/xing-react-ui.js",
   "exports": {
@@ -21,10 +22,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rollup/plugin-typescript": "^10.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-syntax-highlighter": "^15.5.0",
     "sass": "^1.57.0",
+    "tslib": "^2.4.1",
     "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {
