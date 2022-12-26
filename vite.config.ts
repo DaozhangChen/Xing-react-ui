@@ -1,4 +1,4 @@
-import { defineConfig, sortUserPlugins } from 'vite'
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import viteSvgr from "vite-plugin-svgr";
 import * as path from "path";
@@ -7,6 +7,14 @@ import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "src/vars/reset.scss";',
+        javascriptEnabled: true,
+      }
+    }
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, './src/lib/index.tsx'),
@@ -31,7 +39,7 @@ export default defineConfig({
             resolve(__dirname, 'src/components/**'),
             resolve(__dirname, 'src/helper/**')
           ],
-          outDir: resolve(__dirname, 'dist/lib')
+          outDir: resolve(__dirname, 'dist/lib/types')
         })
       ]
     }
