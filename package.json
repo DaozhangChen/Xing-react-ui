@@ -14,8 +14,7 @@
     ".": {
       "import": "./dist/lib/xing-react-ui.js",
       "require": "./dist/lib/xing-react-ui.umd.cjs"
-    },
-    "./dist/lib/style.css": "./dist/lib/style.css"
+    }
   },
   "scripts": {
     "dev": "vite",
