@@ -1,4 +1,4 @@
-import {createHashRouter, HashRouterProps} from "react-router-dom";
+import {createHashRouter, HashRouterProps, redirect} from "react-router-dom";
 import React from "react";
 import HomePage from "./homepage/homePage";
 import Introduction from "./homepage/introduction";
@@ -18,6 +18,10 @@ const router:HashRouterProps = createHashRouter([
         element:<Introduction />,
         children:[
             {
+                path:'',
+                loader:()=>{return redirect("/introduction/usage")}
+            },
+            {
                 path:'icon',
                 element:<IconExample />
             },
@@ -32,6 +36,10 @@ const router:HashRouterProps = createHashRouter([
             {
                 path:'usage',
                 element:<Usage />
+            },
+            {
+                path:'*',
+                loader:()=>{return redirect("/introduction/usage")}
             }
         ]
     },
