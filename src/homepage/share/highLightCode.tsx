@@ -9,7 +9,7 @@ const highLightCode=(props:Prop)=>{
     HighLine.registerLanguage('typescript',ts)
     return <>
         <div className={s.wrapper}>
-    <HighLine style={style} wrapLines={true} language='typescript'>
+    <HighLine style={style} wrapLines={true} language='typescript' wrapLongLines={true}>
         {props.code}
     </HighLine>
         </div>
