@@ -4,6 +4,7 @@ import viteSvgr from "vite-plugin-svgr";
 import * as path from "path";
 import typescript from '@rollup/plugin-typescript'
 import { resolve } from 'path';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -54,5 +55,6 @@ export default defineConfig({
     viteSvgr({
       exportAsDefault: true
     }),
+    cssInjectedByJsPlugin()
   ],
 })
