@@ -1,6 +1,7 @@
 # Xing UI
 这是一款基于React的UI组件，组件简单易用，并且拥有极大的自定义空间，能够简化您繁琐的开发流程。
-
+  
+[首页链接](https://xing-react-ui-1314560368.cos-website.ap-nanjing.myqcloud.com)
 # 下载组件
 ```bash
 //使用npm
