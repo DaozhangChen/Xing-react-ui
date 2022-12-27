@@ -22,11 +22,17 @@
     display: flex;
     align-items: center;
     li{
-      line-height: 64px;
+      line-height: 58px;
       cursor: pointer;
+      border-top: 3px solid white;
+      border-bottom:3px solid white;
+      transition: border-top-color 0.25s linear;
       @media (max-width: 699px) {
         display: none;
       }
+    }
+    li:hover{
+      border-top-color:rgba(84,66,225,0.6);
     }
   }
   .icon{
@@ -37,6 +43,10 @@
     @media (max-width: 700px) {
       margin-left: 0;
     }
+    transition: all 0.25s linear;
+  }
+  .icon:hover{
+    transform: scale(1.05);
   }
   .menuIcon{
     height: 32px;

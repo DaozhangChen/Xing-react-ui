@@ -4,7 +4,6 @@ import Icon from "../../lib/icon/icon";
 import Header from "../../lib/layout/header";
 import React, {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {Link, useMatch} from "react-router-dom";
-import {ifError} from "assert";
 
 
 
@@ -43,7 +42,7 @@ const shareHeader=(props:Prop)=>{
             <ul>
                 <li>Vue版</li>
             </ul>
-            <Icon className={s.icon} name="github" />
+            <a target="_blank" href="https://github.com/DaozhangChen/Xing-react-ui"><Icon className={s.icon} name="github" /></a>
         </div>
     </Header>
     </>
