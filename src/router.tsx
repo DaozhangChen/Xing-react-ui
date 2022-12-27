@@ -1,4 +1,4 @@
-import {createHashRouter, HashRouterProps, redirect} from "react-router-dom";
+import {createHashRouter, HashRouterProps, redirect, RouterProps, RouterProviderProps} from "react-router-dom";
 import React from "react";
 import HomePage from "./homepage/homePage";
 import Introduction from "./homepage/introduction";
@@ -8,7 +8,10 @@ import LayoutExample from "./components/examples/layout.example";
 import Example from "./homepage/example";
 import Usage from "./components/commons/usage";
 
-const router:HashRouterProps = createHashRouter([
+
+
+// @ts-ignore
+const router:RouterProviderProps = createHashRouter([
     {
         path:'/',
         element:<HomePage/>

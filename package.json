@@ -19,6 +19,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:html": "tsc && vite build --config vite.html.config.ts",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -6,8 +6,10 @@ import "./vars/reset.scss"
 
 
 
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+      {/*// @ts-ignore*/}
     <RouterProvider router={router}/>
   </React.StrictMode>,
 )
