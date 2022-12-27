@@ -21,6 +21,11 @@
     padding: 4px 15px;
     border-radius: 6px;
     color: #ffffff;
+    transition: all 0.25s linear;
+  }
+  .button:hover{
+    cursor: pointer;
+    background-color:rgba(86,66,225,0.7);
   }
 }
 
