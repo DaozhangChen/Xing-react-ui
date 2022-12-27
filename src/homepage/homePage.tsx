@@ -13,7 +13,7 @@ const homePage =()=>{
         <Layout>
             <ShareHeader />
             <Content className={s.layoutContent}>
-                <video src={background} autoPlay={true} className={s.background} loop={true}/>
+                <video src={background} autoPlay={true} muted={true} className={s.background} loop={true}/>
                 <div className={s.outerMainText}>
                     <div className={s.mainSlogan}>
                     <h1>Xing UI</h1>

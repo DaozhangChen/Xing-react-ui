@@ -36,6 +36,9 @@
     right: 20px;
     fill: rgba(0,0,0,0.45);
   }
+  &_icon:hover{
+    cursor: pointer;
+  }
   &_button{
     text-align: end;
     margin-top: 12px;
@@ -47,6 +50,11 @@
       padding: 4px 15px;
       border-radius: 6px;
       color: #ffffff;
+      transition: all 0.25s linear;
+    }
+    &_ok:hover{
+      background-color: rgba(84,66,225,0.8);
+      cursor: pointer;
     }
     &_cancel{
       background-color:#ffffff;
@@ -57,6 +65,12 @@
       border-radius: 6px;
       color: black;
       margin-inline-start: 0;
+      transition: all 0.25s linear;
+    }
+    &_cancel:hover{
+      border-color: rgba(84,66,225,0.7);
+      color:rgba(84,66,225) ;
+      cursor: pointer;
     }
   }
 }
