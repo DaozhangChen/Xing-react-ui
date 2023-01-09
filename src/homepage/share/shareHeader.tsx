@@ -2,7 +2,7 @@ import s from "./shareHeader.module.scss";
 import mainLogo from "@assets/mainLogo.png";
 import Icon from "../../lib/icon/icon";
 import Header from "../../lib/layout/header";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Link, useMatch } from "react-router-dom";
 
 
