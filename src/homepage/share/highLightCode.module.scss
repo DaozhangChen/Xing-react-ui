@@ -2,4 +2,9 @@
   border: 1px solid rgb(84, 66, 225);
   margin: 20px 0;
   font-size: 16px;
+  overflow: scroll;
+
+  @media (max-width:700px) {
+    width: calc(100vw - 64px);
+  }
 }
