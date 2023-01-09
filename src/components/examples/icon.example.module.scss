@@ -7,7 +7,7 @@
 .iconCardWrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: stretch;
   flex-wrap: wrap;
 
   .iconCard {
@@ -24,8 +24,7 @@
     border: 2px solid white;
 
     @media (max-width:700px) {
-      width: 25px;
-      border: 1px solid red;
+      width: 25%;
     }
   }
 
